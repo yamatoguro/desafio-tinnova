@@ -51,7 +51,9 @@ public class Main {
                     System.out.println("Fatorial do número " + ((int) num) + ": " + Fatorial.fatorial((int) num));
                     break;
                 case 4:
-
+                    System.out.print("\nExecução da classe Multiplos\nNúmero base para soma dos múltiplos de 3 e 5: ");
+                    num = scan.nextFloat();
+                    System.out.println("Soma dos múltiplos de 3 e 5 menores que " + (int) num + ": " + Multiplos.somarMultiplos((int) num));
                     break;
 
                 default:
