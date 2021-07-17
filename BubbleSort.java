@@ -1,4 +1,4 @@
-public class BubbleSort {
+public interface BubbleSort {
     public static void ordenar(int[] lista, int tam) {
         if (tam == 1)
             return;
