@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { NbDialogService } from '@nebular/theme';
+import { Veiculo } from 'src/app/model/veiculo';
+import { VeiculoService } from 'src/app/service/veiculo.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  filtro: string = '';
+  data: Veiculo[] = [];
+  current = 0;
+  size = 0;
 
-  ngOnInit(): void {
+  constructor(private service: VeiculoService, private dialogService: NbDialogService) {
+    this.service.getVeiculos().subscribe((veiculos: Veiculo[]) => {
+      this.data = veiculos;
+    });
   }
+
+  ngOnInit(): void { }
 
 }

@@ -8,12 +8,16 @@ import { NavComponent } from './components/nav/nav.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NbThemeModule, NbLayoutModule } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
+import { NebularModule } from './share/nebular.module';
+import { Error404Component } from './pages/error/error404/error404.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    NavComponent
+    NavComponent,
+    Error404Component
   ],
   imports: [
     BrowserModule,
@@ -21,7 +25,9 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
     BrowserAnimationsModule,
     NbThemeModule.forRoot({ name: 'cosmic' }),
     NbLayoutModule,
-    NbEvaIconsModule
+    NbEvaIconsModule,
+    NebularModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

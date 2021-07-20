@@ -1,1 +1,43 @@
-<p>home works!</p>
+<nb-card>
+  <nb-card-header>
+    Lista de Veículos
+  </nb-card-header>
+
+  <nb-card-body>
+    <div class="row">
+      <div class="col-sm-3">
+      </div>
+      <br><br>
+      <table>
+        <thead>
+          <th>ID</th>
+          <th>Modelo</th>
+          <th>Marca</th>
+          <th>Ano</th>
+          <th>Descrição</th>
+          <th>Vendido</th>
+          <th>Cadastrado</th>
+          <th>Atualizado</th>
+          <th colspan="2">Ações</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of data">
+            <td style="padding-right: 4em">{{ item.id }}</td>
+            <td style="padding-right: 4em">{{ item.veiculo }}</td>
+            <td style="padding-right: 4em">{{ item.marca }}</td>
+            <td style="padding-right: 4em">{{ item.ano }}</td>
+            <td style="padding-right: 4em">{{ item.descricao }}</td>
+            <td style="padding-right: 4em">{{ item.vendido }}</td>
+            <td style="padding-right: 4em">{{ item.created }}</td>
+            <td style="padding-right: 4em">{{ item.updated }}</td>
+            <td style="padding-right: 4em">
+              <button nbButton status="warning" type="button">Editar</button>
+              &nbsp;
+              <button nbButton status="danger" type="button">Excluir</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </nb-card-body>
+</nb-card>

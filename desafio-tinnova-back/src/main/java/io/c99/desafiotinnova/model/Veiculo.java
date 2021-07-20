@@ -15,12 +15,27 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "veiculo")
 @ApiModel(description = "Veículos de qualquer tipo")
 public class Veiculo {
+
+    // public Veiculo() {
+    // }
+
+    // public Veiculo(Long id, String veiculo, String marca, int ano, String descricao, boolean vendido, Calendar created,
+    //         Calendar updated) {
+    //     this.id = id;
+    //     this.veiculo = veiculo;
+    //     this.marca = marca;
+    //     this.ano = ano;
+    //     this.descricao = descricao;
+    //     this.vendido = vendido;
+    //     this.created = created;
+    //     this.updated = updated;
+    // }
 
     @Id
     @GeneratedValue

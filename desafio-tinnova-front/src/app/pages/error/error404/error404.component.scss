@@ -1,0 +1,32 @@
+body {
+  font-size: 18px;
+  //   font-family: "Helvetica Neue", sans-serif;
+  background-color: #010a01;
+}
+
+h1,
+h2 {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 6rem;
+}
+
+.pulsate {
+  animation: pulsate 1.5s infinite alternate;
+}
+
+.flicker {
+  animation: flicker 1.5s infinite alternate;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+.container {
+  margin-top: 20vh;
+}

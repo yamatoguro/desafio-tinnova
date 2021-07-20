@@ -1,0 +1,62 @@
+import { NgModule } from '@angular/core';
+import {
+  NbActionsModule,
+  NbButtonModule,
+  NbCardModule,
+  NbDialogModule,
+  NbDialogService,
+  NbIconModule,
+  NbInputModule,
+  NbMenuModule,
+  NbMenuService,
+  NbSearchModule,
+  NbSearchService,
+  NbSidebarModule,
+  NbSidebarService,
+  NbToastrModule,
+  NbToastrService,
+  NbTooltipModule,
+  NbUserModule,
+} from '@nebular/theme';
+
+@NgModule({
+  imports: [
+    NbSidebarModule,
+    NbCardModule,
+    NbButtonModule,
+    NbTooltipModule,
+    NbInputModule,
+    NbIconModule,
+    NbMenuModule.forRoot(),
+    NbTooltipModule,
+    NbSearchModule,
+    NbActionsModule,
+    NbUserModule,
+    NbToastrModule.forRoot(),
+    NbDialogModule,
+    NbDialogModule.forRoot(),
+
+  ],
+  exports: [
+    NbSidebarModule,
+    NbCardModule,
+    NbButtonModule,
+    NbTooltipModule,
+    NbInputModule,
+    NbIconModule,
+    NbMenuModule,
+    NbTooltipModule,
+    NbSearchModule,
+    NbActionsModule,
+    NbUserModule,
+    NbToastrModule,
+    NbDialogModule,
+  ],
+  providers: [
+    NbSidebarService,
+    NbMenuService,
+    NbSearchService,
+    NbToastrService,
+  ],
+})
+export class NebularModule {}
