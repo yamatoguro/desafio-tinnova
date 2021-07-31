@@ -4,6 +4,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import io.c99.desafiotinnova.model.Veiculo;
+import io.c99.desafiotinnova.model.dto.VeiculoDTO;
 import io.c99.desafiotinnova.repository.VeiculoRepository;
 
 @Service
@@ -20,5 +21,16 @@ public class VeiculoService {
     public Veiculo getVeiculoById(long id) {
         Veiculo resultado = repository.getVeiculoById(id);
         return resultado;
+    }
+
+    public VeiculoDTO newVeiculo (Veiculo veiculo) {
+        Veiculo v = repository.save(veiculo);
+        VeiculoDTO dto = new VeiculoDTO();
+        dto.toDTO(v);
+        return dto;
+    }
+
+    public void deleteVeiculo(long id) {
+        this.repository.deleteById(id);
     }
 }

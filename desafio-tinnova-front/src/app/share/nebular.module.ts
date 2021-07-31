@@ -9,12 +9,14 @@ import {
   NbInputModule,
   NbMenuModule,
   NbMenuService,
+  NbRadioModule,
   NbSearchModule,
   NbSearchService,
   NbSidebarModule,
   NbSidebarService,
   NbToastrModule,
   NbToastrService,
+  NbToggleModule,
   NbTooltipModule,
   NbUserModule,
 } from '@nebular/theme';
@@ -35,7 +37,8 @@ import {
     NbToastrModule.forRoot(),
     NbDialogModule,
     NbDialogModule.forRoot(),
-
+    NbRadioModule,
+    NbToggleModule
   ],
   exports: [
     NbSidebarModule,
@@ -51,12 +54,15 @@ import {
     NbUserModule,
     NbToastrModule,
     NbDialogModule,
+    NbRadioModule,
+    NbToggleModule
   ],
   providers: [
     NbSidebarService,
     NbMenuService,
     NbSearchService,
     NbToastrService,
+    NbDialogService
   ],
 })
 export class NebularModule {}

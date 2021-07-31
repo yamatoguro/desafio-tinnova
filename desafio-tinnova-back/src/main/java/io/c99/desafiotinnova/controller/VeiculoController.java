@@ -1,6 +1,6 @@
 package io.c99.desafiotinnova.controller;
 
-import java.util.Calendar;
+import java.text.ParseException;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import io.c99.desafiotinnova.model.Veiculo;
+import io.c99.desafiotinnova.model.dto.VeiculoDTO;
 import io.c99.desafiotinnova.service.VeiculoService;
 
 @RestController
@@ -31,8 +32,18 @@ public class VeiculoController {
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     @ResponseStatus(value = HttpStatus.OK)
     public Veiculo getVeiculoById(@PathVariable long id) {
-        Veiculo v = service.getVeiculoById(id);
-        // Veiculo v = new Veiculo(Long.valueOf(1L), "M3", "BMW", 2021, "Carro novo na cor preta", false, Calendar.getInstance(), Calendar.getInstance());
-        return v;
+        return service.getVeiculoById(id);
+    }
+
+    @RequestMapping(method = RequestMethod.POST)
+    @ResponseStatus(value = HttpStatus.CREATED)
+    public void newVeiculo(VeiculoDTO veiculo) throws ParseException {
+        service.newVeiculo(VeiculoDTO.fromDTO(veiculo));
+    }    
+
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    @ResponseStatus(value = HttpStatus.OK)
+    public void deleteVeiculo(@PathVariable long id) {
+        service.deleteVeiculo(id);
     }
 }

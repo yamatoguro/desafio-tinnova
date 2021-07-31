@@ -4,7 +4,9 @@
 
     <changeSet id="1" author="iago">
         <createTable catalogName="desafio" schemaName="public" tableName="veiculo" tablespace="tablespace">
-            <column name="id" type="integer" />
+            <column name="id" type="integer" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
             <column name="veiculo" type="varchar(200)" />
             <column name="marca" type="varchar(200)" />
             <column name="ano" type="int" />

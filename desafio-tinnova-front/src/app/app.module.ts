@@ -11,13 +11,18 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { NebularModule } from './share/nebular.module';
 import { Error404Component } from './pages/error/error404/error404.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CadastroVeiculoComponent } from './components/cadastro-veiculo/cadastro-veiculo.component';
+import { DialogComponent } from './components/dialog/dialog.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NavComponent,
-    Error404Component
+    Error404Component,
+    CadastroVeiculoComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +32,8 @@ import { HttpClientModule } from '@angular/common/http';
     NbLayoutModule,
     NbEvaIconsModule,
     NebularModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

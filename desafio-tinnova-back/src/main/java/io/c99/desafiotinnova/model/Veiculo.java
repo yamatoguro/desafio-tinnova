@@ -1,6 +1,6 @@
 package io.c99.desafiotinnova.model;
 
-import java.util.Calendar;
+import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -21,21 +21,6 @@ import lombok.NoArgsConstructor;
 @Table(name = "veiculo")
 @ApiModel(description = "Veículos de qualquer tipo")
 public class Veiculo {
-
-    // public Veiculo() {
-    // }
-
-    // public Veiculo(Long id, String veiculo, String marca, int ano, String descricao, boolean vendido, Calendar created,
-    //         Calendar updated) {
-    //     this.id = id;
-    //     this.veiculo = veiculo;
-    //     this.marca = marca;
-    //     this.ano = ano;
-    //     this.descricao = descricao;
-    //     this.vendido = vendido;
-    //     this.created = created;
-    //     this.updated = updated;
-    // }
 
     @Id
     @GeneratedValue
@@ -65,10 +50,10 @@ public class Veiculo {
     @Temporal(TemporalType.DATE)
     @Column(name = "created", nullable = false)
     @ApiModelProperty(notes = "Data e hora de cadastro do veículo", example = "2019-01-25 10:55:21")
-    private Calendar created;
+    private Date created;
 
     @Temporal(TemporalType.DATE)
     @Column(name = "updated", nullable = false)
     @ApiModelProperty(notes = "Data e hora da última atualização no cadastro do veículo", example = "2019-01-25 10:55:21")
-    private Calendar updated;
+    private Date updated;
 }

@@ -1,6 +1,7 @@
 <nb-card>
   <nb-card-header>
-    Lista de Veículos
+    <h5 style="float: left;">Lista de Veículos</h5>
+    <button style="float: right;" nbButton (click)="onCreate()">Novo Veículo</button>
   </nb-card-header>
 
   <nb-card-body>
@@ -33,7 +34,7 @@
             <td style="padding-right: 4em">
               <button nbButton status="warning" type="button">Editar</button>
               &nbsp;
-              <button nbButton status="danger" type="button">Excluir</button>
+              <button nbButton status="danger" (click)="onDelete(item.id)" type="button">Excluir</button>
             </td>
           </tr>
         </tbody>
