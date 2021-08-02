@@ -1,4 +1,27 @@
 # Desafio Tinnova
+
+## Exercícios
+Para execução de cada exercício, com excessão do [Veículos](#veiculos), deve se executar a classe Main.java presente na raíz do repositório. Está presente um menu simples na console que finaliza a execução do programa ao receber a opção 0.
+
+- [Eleição](#eleicao)
+- [Bubble Sort](#bubble)
+- [Fatorial](#fatorial)
+- [Múltiplos](#multiplos)
+- [Veículos](#veiculos)
+
+## Eleição <a name = "eleicao"></a>
+Uma classe que verifica uma eleição conforme os dados recebidos, são 4 parâmetros recebidos, sendo eles Total de eleitores, votos em branco, votos válidos e votols nulos, e retorna um cálculo de percentual de cada um dos tipos de votos em relação ao total de eleitores.
+
+## Bubble Sort <a name = "bubble"></a>
+Uma classe que organiza um vetor conforme o algoritmo Bubble Sort, já amplamente documentado e validado.
+
+## Fatorial <a name = "fatorial"></a>
+Uma classe que calcula o fatorial do número recebido, cálculo feito de forma recursiva.
+
+## Múltiplos <a name = "multiplos"></a>
+Uma classe que calcula a soma de todos os múltiplos de 3 e 5 menores que o valor recebido.
+
+## Aplicação Veículos <a name = "veiculos"></a>
 ## Conteúdos
 - [Funcionalidades](#about)
 - [Endpoints](#endpoints)
