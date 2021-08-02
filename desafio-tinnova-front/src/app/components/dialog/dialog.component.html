@@ -1,0 +1,18 @@
+<nb-card>
+  <nb-card-header>
+    <h5>{{title}}</h5>
+  </nb-card-header>
+  <nb-card-body>
+    <p>{{text}}</p>
+    <div *ngIf="dialogType === INPUT_DIALOG">
+      <label for="dataInput">Justificativa</label>
+      <input #dataInput nbInput [(ngModel)]="data">
+    </div>
+    <div>
+      <button nbButton status="danger" style="float: left; margin-right: 10px;"
+        *ngIf="dialogType != SIMPLE_DIALOG && dialogType != ALERT_DIALOG" (click)="onNoClick()">{{close}}</button>
+      <button nbButton status="success" style="float: right;" *ngIf="dialogType != SIMPLE_DIALOG" (click)="onYesClick()"
+        cdkFocusInitial>{{save}}</button>
+    </div>
+  </nb-card-body>
+</nb-card>

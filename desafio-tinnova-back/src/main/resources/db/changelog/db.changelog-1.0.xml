@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="1" author="iago">
+        <createTable catalogName="desafio" schemaName="public" tableName="veiculo" tablespace="tablespace">
+            <column name="id" type="integer" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="veiculo" type="varchar(200)" />
+            <column name="marca" type="varchar(200)" />
+            <column name="ano" type="int" />
+            <column name="descricao" type="text" />
+            <column name="vendido" type="bool" />
+            <column name="created" type="datetime" defaultValueComputed="NOW()">
+                <constraints nullable="false" />
+            </column>
+            <column name="updated" type="datetime" defaultValueComputed="NOW() ON UPDATE NOW()">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

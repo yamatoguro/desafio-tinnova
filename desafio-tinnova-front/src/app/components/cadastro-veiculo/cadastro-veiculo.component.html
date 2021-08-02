@@ -1,0 +1,34 @@
+<nb-card>
+  <nb-card-header>{{ title }}</nb-card-header>
+  <nb-card-body>
+    <form>
+      <div class="col-md-12">
+        <label for="marca" class="label col-sm-3 col-form-label">Marca: </label>
+        <input nbInput class="campo col-form-field" type="text" fieldSize="small" style="float: right;" name="marca"
+          placeholder="Mazda" [(ngModel)]="veiculo.marca">
+      </div>
+      <div class="col-md-12">
+        <label for="modelo" class="label col-sm-3 col-form-label">Modelo: </label>
+        <input nbInput class="campo col-form-field" type="text" fieldSize="small" style="float: right;" name="modelo"
+          placeholder="RX-7" [(ngModel)]="veiculo.veiculo">
+      </div>
+      <div class="col-md-12">
+        <label for="ano" class="label col-sm-3 col-form-label">Ano: </label>
+        <input nbInput class="campo col-form-field" type="number" fieldSize="small" style="float: right;" name="ano"
+          placeholder="1978" [(ngModel)]="veiculo.ano">
+      </div>
+      <div class="col-md-12">
+        <label for="descricao" class="label col-sm-3 col-form-label">Descrição: </label>
+        <input nbInput class="campo col-form-field" type="text" fieldSize="small" style="float: right;" name="descricao"
+          placeholder="Veículo Prata" [(ngModel)]="veiculo.descricao">
+      </div>
+      <div class="col-md-12">
+        <nb-checkbox class="col-form-label col-sm-3" [checked]="veiculo.vendido">Vendido</nb-checkbox>
+      </div>
+    </form>
+  </nb-card-body>
+  <nb-card-footer>
+    <button nbButton hero status="danger" (click)="dismiss()">Cancelar</button>
+    <button style="float: right;" type="submit" nbButton hero status="success" (click)="send()">Enviar</button>
+  </nb-card-footer>
+</nb-card>
