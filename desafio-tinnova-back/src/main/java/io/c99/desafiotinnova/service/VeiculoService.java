@@ -53,4 +53,9 @@ public class VeiculoService {
     public void deleteVeiculo(long id) {
         this.repository.deleteById(id);
     }
+
+    public List<Veiculo> pesquisaVeiculo(String termo) {
+        List<Veiculo> list = this.repository.filtrar(termo);
+        return list;
+    }
 }

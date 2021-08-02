@@ -2,6 +2,13 @@
   <nb-card-header>
     <h5 style="float: left;">Lista de Veículos</h5>
     <button style="float: right;" nbButton (click)="onCreate()">Novo Veículo</button>
+    <nb-form-field style="float: right; margin-right: 10px;">
+      <input style="width: max-content;" name="filtro" nbInput placeholder="Pesquisar Veículos" [(ngModel)]="filtro" (keydown.enter)="filtrar()">
+      <button nbSuffix nbButton ghost (click)="filtrar()">
+        <nb-icon icon="search" pack="eva">
+        </nb-icon>
+      </button>
+    </nb-form-field>
   </nb-card-header>
 
   <nb-card-body>

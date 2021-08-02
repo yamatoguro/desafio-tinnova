@@ -44,8 +44,8 @@ public class VeiculoController {
 
     @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
     @ResponseStatus(value = HttpStatus.CREATED)
-    public void putVeiculo(@PathVariable long id, @RequestParam String veiculo, @RequestParam String marca, @RequestParam int ano,
-            @RequestParam String descricao, @RequestParam boolean vendido) {
+    public void putVeiculo(@PathVariable long id, @RequestParam String veiculo, @RequestParam String marca,
+            @RequestParam int ano, @RequestParam String descricao, @RequestParam boolean vendido) {
         Veiculo v = new Veiculo(id, veiculo, marca, ano, descricao, vendido);
         service.newVeiculo(v);
     }
@@ -62,5 +62,11 @@ public class VeiculoController {
     @ResponseStatus(value = HttpStatus.OK)
     public void deleteVeiculo(@PathVariable long id) {
         service.deleteVeiculo(id);
+    }
+
+    @RequestMapping(value = "/find", method = RequestMethod.GET)
+    @ResponseStatus(value = HttpStatus.OK)
+    public List<Veiculo> pesquisaVeiculo(@RequestParam String termo) {
+        return service.pesquisaVeiculo(termo);
     }
 }

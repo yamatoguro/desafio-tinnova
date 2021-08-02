@@ -63,4 +63,10 @@ export class VeiculoService {
     }
     return this.http.patch(this.url, params);
   }
+
+
+  searchVeiculo(filtro: string): Observable<Veiculo[]> {
+    const params = new HttpParams().set('termo', filtro);
+    return this.http.get<Veiculo[]>(this.url + '/find', {params});
+  }
 }

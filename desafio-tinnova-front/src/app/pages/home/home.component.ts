@@ -15,6 +15,7 @@ export class HomeComponent implements OnInit {
   data: Veiculo[] = [];
   current = 0;
   size = 0;
+  console = console;
 
   constructor(
     private service: VeiculoService,
@@ -66,5 +67,11 @@ export class HomeComponent implements OnInit {
         }
       }
     );
+  }
+
+  filtrar(){
+    this.service.searchVeiculo(this.filtro).subscribe((v: Veiculo[]) => {
+      this.data = v;      
+    });
   }
 }

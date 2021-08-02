@@ -6,6 +6,7 @@ import {
   NbCheckboxModule,
   NbDialogModule,
   NbDialogService,
+  NbFormFieldModule,
   NbIconModule,
   NbInputModule,
   NbMenuModule,
@@ -40,7 +41,8 @@ import {
     NbDialogModule.forRoot(),
     NbRadioModule,
     NbToggleModule,
-    NbCheckboxModule
+    NbCheckboxModule,
+    NbFormFieldModule
   ],
   exports: [
     NbSidebarModule,
@@ -58,7 +60,8 @@ import {
     NbDialogModule,
     NbRadioModule,
     NbToggleModule,
-    NbCheckboxModule
+    NbCheckboxModule,
+    NbFormFieldModule
   ],
   providers: [
     NbSidebarService,
