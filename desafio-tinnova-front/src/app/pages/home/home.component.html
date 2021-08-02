@@ -1,51 +1,94 @@
-<nb-card>
-  <nb-card-header>
-    <h5 style="float: left;">Lista de Veículos</h5>
-    <button style="float: right;" nbButton (click)="onCreate()">Novo Veículo</button>
-    <nb-form-field style="float: right; margin-right: 10px;">
-      <input style="width: max-content;" name="filtro" nbInput placeholder="Pesquisar Veículos" [(ngModel)]="filtro" (keydown.enter)="filtrar()">
-      <button nbSuffix nbButton ghost (click)="filtrar()">
-        <nb-icon icon="search" pack="eva">
-        </nb-icon>
-      </button>
-    </nb-form-field>
-  </nb-card-header>
+<div class="row">
+  <div class="col-4">
+    <nb-card>
+      <nb-card-header>
+        Veículos Vendidos
+      </nb-card-header>
+      <nb-card-body>
+        Vendidos: {{calcVendidos()}}
+        <nb-progress-bar status="success" [value]="calcVendidos()/data.length*100"></nb-progress-bar>
+        Não vendidos: {{data.length - calcVendidos()}}
+        <nb-progress-bar status="success" [value]="(data.length-calcVendidos())/data.length*100"></nb-progress-bar>
+      </nb-card-body>
+    </nb-card>
+  </div>
+  <div class="col-4">
+    <nb-card>
+      <nb-card-header>
+        Fabricação dos Veículos
+      </nb-card-header>
+      <nb-card-body>
+        <span *ngFor="let d of calcDecadas()">
+          <span *ngIf="d.count > 0">
+            {{d.ano1}} - {{d.ano2}}: {{d.count}}
+            <nb-progress-bar status="success" [value]="d.count/data.length*100"></nb-progress-bar>
+          </span>
+        </span>
+      </nb-card-body>
+    </nb-card>
+  </div>
+  <div class="col-4">
+    <nb-card>
+      <nb-card-header>
+        Marca dos Veículos
+      </nb-card-header>
+      <nb-card-body>
+        <span *ngFor="let m of calcMarcas()">
+          {{m.marca}}: {{m.count}}
+          <nb-progress-bar status="success" [value]="m.count/data.length*100"></nb-progress-bar>
+        </span>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>
 
-  <nb-card-body>
-    <div class="row">
-      <div class="col-sm-3">
-      </div>
-      <br><br>
-      <table>
-        <thead>
-          <th>ID</th>
-          <th>Modelo</th>
-          <th>Marca</th>
-          <th>Ano</th>
-          <th>Descrição</th>
-          <th>Vendido</th>
-          <th>Cadastrado</th>
-          <th>Atualizado</th>
-          <th colspan="2">Ações</th>
-        </thead>
-        <tbody>
-          <tr *ngFor="let item of data">
-            <td style="padding-right: 3em;">{{ item.id }}</td>
-            <td style="padding-right: 3em;">{{ item.veiculo }}</td>
-            <td style="padding-right: 3em;">{{ item.marca }}</td>
-            <td style="padding-right: 3em;">{{ item.ano }}</td>
-            <td style="padding-right: 3em;">{{ item.descricao }}</td>
-            <td style="padding-right: 3em;">{{ (item.vendido) ? 'Sim' : 'Não' }}</td>
-            <td style="padding-right: 3em;">{{ item.created }}</td>
-            <td style="padding-right: 3em;">{{ item.updated }}</td>
-            <td style="padding-right: 3em;">
-              <button nbButton status="warning" (click)="onEdit(item.id)" type="button">Editar</button>
-              &nbsp;
-              <button nbButton status="danger" (click)="onDelete(item.id)" type="button">Excluir</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </nb-card-body>
-</nb-card>
+<div class="row">
+  <div class="col">
+    <nb-card>
+      <nb-card-header>
+        <h5 style="float: left;">Lista de Veículos</h5>
+        <button style="float: right;" nbButton (click)="onCreate()">Novo Veículo</button>
+        <span style="float: right; margin-right: 10px; padding: 0 5px;">
+          <button nbButton ghost nbTooltip="Limpar Filtro" (click)="getVeiculos()">
+            <nb-icon icon="close" pack="eva"></nb-icon>
+          </button>
+          <nb-search type="rotate-layout" hint="Aperte ENTER para pesquisar ou ESC para cancelar"
+            placeholder="Pesquisar Veículo" nbTooltip="Pesquisar Veículo"></nb-search>
+        </span>
+      </nb-card-header>
+
+      <nb-card-body>
+        <table>
+          <thead>
+            <th>ID</th>
+            <th>Modelo</th>
+            <th>Marca</th>
+            <th>Ano</th>
+            <th>Descrição</th>
+            <th>Vendido</th>
+            <th>Cadastrado</th>
+            <th>Atualizado</th>
+            <th colspan="2">Ações</th>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of data">
+              <td style="padding-right: 3em;">{{ item.id }}</td>
+              <td style="padding-right: 3em;">{{ item.veiculo }}</td>
+              <td style="padding-right: 3em;">{{ item.marca }}</td>
+              <td style="padding-right: 3em;">{{ item.ano }}</td>
+              <td style="padding-right: 3em;">{{ item.descricao }}</td>
+              <td style="padding-right: 3em;">{{ (item.vendido) ? 'Sim' : 'Não' }}</td>
+              <td style="padding-right: 3em;">{{ item.created }}</td>
+              <td style="padding-right: 3em;">{{ item.updated }}</td>
+              <td style="padding-right: 3em;">
+                <button nbButton status="warning" (click)="onEdit(item.id)" type="button">Editar</button>
+                &nbsp;
+                <button nbButton status="danger" (click)="onDelete(item.id)" type="button">Excluir</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>

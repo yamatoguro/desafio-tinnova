@@ -11,6 +11,7 @@ import {
   NbInputModule,
   NbMenuModule,
   NbMenuService,
+  NbProgressBarModule,
   NbRadioModule,
   NbSearchModule,
   NbSearchService,
@@ -42,7 +43,8 @@ import {
     NbRadioModule,
     NbToggleModule,
     NbCheckboxModule,
-    NbFormFieldModule
+    NbFormFieldModule,
+    NbProgressBarModule
   ],
   exports: [
     NbSidebarModule,
@@ -61,7 +63,8 @@ import {
     NbRadioModule,
     NbToggleModule,
     NbCheckboxModule,
-    NbFormFieldModule
+    NbFormFieldModule,
+    NbProgressBarModule
   ],
   providers: [
     NbSidebarService,
