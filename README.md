@@ -47,7 +47,6 @@ VeiculoController
     └─@return Excluir um veiculo
 ```
 ## Considerações <a name = "consideracoes"></a>
----
 
 ### Compile & Run
 
