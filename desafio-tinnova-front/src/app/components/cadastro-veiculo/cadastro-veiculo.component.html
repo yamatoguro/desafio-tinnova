@@ -4,28 +4,25 @@
     <form>
       <div class="col-md-4">
         <label for="marca" class="label col-sm-3 col-form-label">Marca: </label>
-        <input type="text" required nbInput fieldSize="small" style="float: right;" name="marca"
-          placeholder="Mazda" [(ngModel)]="veiculo.marca">
+        <input nbInput class="campo" type="text" fieldSize="small" style="float: right;" name="marca" placeholder="Mazda" [(ngModel)]="veiculo.marca">
       </div> <br>
       <div class="col-md-4">
         <label for="modelo" class="label col-sm-3 col-form-label">Modelo: </label>
-        <input type="text" required nbInput fieldSize="small" style="float: right;" name="modelo"
-          placeholder="RX-7" [(ngModel)]="veiculo.veiculo">
+        <input nbInput class="campo" type="text" fieldSize="small" style="float: right;" name="modelo" placeholder="RX-7" [(ngModel)]="veiculo.veiculo">
       </div> <br>
       <div class="col-md-4">
         <label for="ano" class="label col-sm-3 col-form-label">Ano: </label>
-        <input type="text" required nbInput fieldSize="small" style="float: right;" name="ano"
-          placeholder="1978" [(ngModel)]="veiculo.ano">
+        <input nbInput class="campo" type="number" fieldSize="small" style="float: right;" name="ano" placeholder="1978" [(ngModel)]="veiculo.ano">
       </div> <br>
       <div class="col-md-4">
         <label for="descricao" class="label col-sm-3 col-form-label">Descrição: </label>
-        <nb-toggle status="info">Info</nb-toggle>
-
+        <input nbInput class="campo" type="text" fieldSize="small" style="float: right;" name="descricao" placeholder="Veículo Prata" [(ngModel)]="veiculo.descricao">
       </div> <br>
+      <nb-checkbox [checked]="veiculo.vendido">Vendido</nb-checkbox>
     </form>
   </nb-card-body>
   <nb-card-footer>
     <button nbButton hero status="danger" (click)="dismiss()">Cancelar</button>
-    <button style="float: right;" type="submit" nbButton hero status="success">Enviar</button>
+    <button style="float: right;" type="submit" nbButton hero status="success" (click)="send()">Enviar</button>
   </nb-card-footer>
 </nb-card>

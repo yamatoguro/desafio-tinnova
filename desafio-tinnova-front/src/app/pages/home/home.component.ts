@@ -30,14 +30,14 @@ export class HomeComponent implements OnInit {
 
   onCreate() {
     this.nbDialogService.open(CadastroVeiculoComponent, {
-      context: { title: 'Cadastrar Veículo' },
+      context: { title: 'Cadastrar Veículo'}
     });
   }
 
   onEdit(id: number) {
     this.service.getVeiculo(id).subscribe((v) => {
       this.nbDialogService.open(CadastroVeiculoComponent, {
-        context: { title: 'Editar Empresa', id: v.id, veiculo: v },
+        context: { title: 'Atualizar Veículo: ' + v.marca + ' ' + v.veiculo, id: v.id, veiculo: v },
       });
     });
   }

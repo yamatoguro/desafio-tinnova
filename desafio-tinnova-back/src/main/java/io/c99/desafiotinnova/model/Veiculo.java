@@ -22,6 +22,28 @@ import lombok.NoArgsConstructor;
 @ApiModel(description = "Veículos de qualquer tipo")
 public class Veiculo {
 
+    // Novo Veículo
+    public Veiculo(String veiculo, String marca, int ano, String descricao, boolean vendido) {
+        this.veiculo = veiculo;
+        this.marca = marca;
+        this.ano = ano;
+        this.descricao = descricao;
+        this.vendido = vendido;
+        this.created = new Date();
+        this.updated = new Date();
+    }
+
+    // Atualização de Veículo
+    public Veiculo(long id, String veiculo, String marca, int ano, String descricao, boolean vendido) {
+        this.id = Long.valueOf(id);
+        this.veiculo = veiculo;
+        this.marca = marca;
+        this.ano = ano;
+        this.descricao = descricao;
+        this.vendido = vendido;
+        this.updated = new Date();
+    }
+
     @Id
     @GeneratedValue
     @Column(name = "id", nullable = false)

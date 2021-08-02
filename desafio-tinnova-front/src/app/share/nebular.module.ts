@@ -3,6 +3,7 @@ import {
   NbActionsModule,
   NbButtonModule,
   NbCardModule,
+  NbCheckboxModule,
   NbDialogModule,
   NbDialogService,
   NbIconModule,
@@ -38,7 +39,8 @@ import {
     NbDialogModule,
     NbDialogModule.forRoot(),
     NbRadioModule,
-    NbToggleModule
+    NbToggleModule,
+    NbCheckboxModule
   ],
   exports: [
     NbSidebarModule,
@@ -55,7 +57,8 @@ import {
     NbToastrModule,
     NbDialogModule,
     NbRadioModule,
-    NbToggleModule
+    NbToggleModule,
+    NbCheckboxModule
   ],
   providers: [
     NbSidebarService,

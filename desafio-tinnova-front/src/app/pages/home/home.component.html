@@ -23,16 +23,16 @@
         </thead>
         <tbody>
           <tr *ngFor="let item of data">
-            <td style="padding-right: 4em">{{ item.id }}</td>
-            <td style="padding-right: 4em">{{ item.veiculo }}</td>
-            <td style="padding-right: 4em">{{ item.marca }}</td>
-            <td style="padding-right: 4em">{{ item.ano }}</td>
-            <td style="padding-right: 4em">{{ item.descricao }}</td>
-            <td style="padding-right: 4em">{{ item.vendido }}</td>
-            <td style="padding-right: 4em">{{ item.created }}</td>
-            <td style="padding-right: 4em">{{ item.updated }}</td>
-            <td style="padding-right: 4em">
-              <button nbButton status="warning" type="button">Editar</button>
+            <td style="padding-right: 3em;">{{ item.id }}</td>
+            <td style="padding-right: 3em;">{{ item.veiculo }}</td>
+            <td style="padding-right: 3em;">{{ item.marca }}</td>
+            <td style="padding-right: 3em;">{{ item.ano }}</td>
+            <td style="padding-right: 3em;">{{ item.descricao }}</td>
+            <td style="padding-right: 3em;">{{ (item.vendido) ? 'Sim' : 'Não' }}</td>
+            <td style="padding-right: 3em;">{{ item.created }}</td>
+            <td style="padding-right: 3em;">{{ item.updated }}</td>
+            <td style="padding-right: 3em;">
+              <button nbButton status="warning" (click)="onEdit(item.id)" type="button">Editar</button>
               &nbsp;
               <button nbButton status="danger" (click)="onDelete(item.id)" type="button">Excluir</button>
             </td>
